@@ -28,7 +28,7 @@ STOPWORDS = set(['a', 'about', 'above', 'after', 'again', 'against', 'all', 'am'
 # Output: best answer choice for the input question
 #
 # Test Results (on 1040 test samples):
-#   30.7% accuracy using wmd 22% 18% 15.4% 14%
+#   30.7% accuracy using wmd
 #   30.3% accuracy using rwmd
 #   31.25% accuracy using wcd
 #   18.8% accuracy using cos
@@ -71,7 +71,7 @@ def run_word_embeddings_model():
     print('Loading Test Data...')
 
     #question, answer = get_test_data('dataset/MSR_Sentence_Completion_Challenge_V1/Data/')
-    question, answer = get_test_data('dataset/SAT_Questions/')
+    question, answer = get_test_data('dataset/MSR_Sentence_Completion_Challenge_V1/Data')
 
     print('Loading Model Data...')
 
@@ -79,7 +79,7 @@ def run_word_embeddings_model():
     m.load()
 
     right = 0.0
-    wrong = 0.0
+    total = 0.0
 
     print('Predicting Answers... ')
 
@@ -89,10 +89,9 @@ def run_word_embeddings_model():
         best = find_best_answer(question[q_num], m, wmd)
         if answer[q_num] in best:
             right += 1
-        else:
-            wrong += 1
+        total += 1
         
-    print('The accuracy is ' + str(right/(right + wrong)))
+    print('The accuracy is ' + str(right/(total)))
 
 if __name__ == '__main__':
     run_word_embeddings_model()

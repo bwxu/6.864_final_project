@@ -312,7 +312,7 @@ def main(_):
                 print("Epoch: %d Learning rate: %.3f" % (i + 1, session.run(m.lr)))
                 run_epoch(session, m, eval_op=m.train_op, verbose=True)
             
-            with open('backwards_out_SAT.txt', 'w') as f:
+            with open('OUTPUT_FILE_NAME.txt', 'w') as f:
                 num_correct = 0.0
                 for i in range(len(test_sentences)):
                     mtest = mtests[i]

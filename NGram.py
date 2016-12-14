@@ -27,11 +27,10 @@ def get_bigram_data(training_data_folder):
                 
                 text = f.read()
                 
-                # TODO: Figure out why some texts are throwing errors for this
                 try:
                     sentences = [nltk.tokenize.word_tokenize(s) for s in nltk.tokenize.sent_tokenize(text)]
                 except:
-                    print('ERROR READING FILE')
+                    print('ERROR READING FILE, make sure punkt pickle is installed for nltk. If already installed, then data file could be bad.')
                     continue
                     
                 for sentence in sentences:
@@ -177,7 +176,7 @@ def run_bigram_model():
     print('Extracting Training Data...')
     frequency, transition_prob = get_bigram_data('dataset/Holmes_Training_Data/')
     print('Extracting Test Data...')
-    question, answer = get_test_data('dataset/SAT_Questions')
+    question, answer = get_test_data('dataset/MSR_Sentence_Completion_Challenge_V1/Data')
     print('Computing Model Results...')
     percent_correct, model_answers = get_bigram_results(frequency, transition_prob, question, answer)
     print('Percent Correct: ' + str(percent_correct))
