@@ -55,6 +55,10 @@ To run the forward LSTM model, use the command
 To run the backwards LSTM model, use the command
 
     python3 LSTM.py --data_path='.' --model=test backwards=True
+    
+To combine the forwards and backwards into a bidirectional LSTM, run both the forwards and backwards. Then, go into bidirectional_LSTM and change the forward_file and backward_file to the relevant file names. Ensure that test_data_location and output_file are correct. Then run,
+
+    python3 bidirectional_LSTM.py
 
 The "model" flag may be any of small, medium, large, or test. We recommend running test (a very small configuration) for time purposes.
 
