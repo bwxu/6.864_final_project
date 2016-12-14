@@ -1040,3 +1040,5 @@
 1039 1.61748e-05 5.81543e-06 1.46166e-05 1.67347e-06 1.9477e-06 
 
 Accuracy: 0.2403846153846154
+Test Accuracy (first 800 tests): 0.2475
+Validation Accuracy (last 240 tests): 0.2166666666666667
