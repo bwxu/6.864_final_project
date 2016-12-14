@@ -34,14 +34,14 @@ NLTK punkt pickle
 ### n-Gram Model
 First, download and extract the holmes training data and test data into the dataset folder. The data is found on https://www.microsoft.com/en-us/research/project/msr-sentence-completion-challenge/. Then, to run the code, use the command,
 
-python3 NGram.py
+    python3 NGram.py
 
 ### Word Embeddings Model
 Before running, make sure you have the holmes training and test data in your dataset folder. Also, make sure you have vectors.txt downloaded in the same directory as word_embeddings.py
 
 To run the word embeddings model, use the command
 
-python3 word_embeddings.py
+    python3 word_embeddings.py
 
 ### LSTM Model
 Before running make sure you have the WSJ as well as the holmes training and test data in your dataset folder.
@@ -50,11 +50,11 @@ Running the LSTM model will save the output generate an output file in the text 
 
 To run the forward LSTM model, use the command
 
-python3 LSTM.py --data_path='.' --model=test backwards=False
+    python3 LSTM.py --data_path='.' --model=test backwards=False
 
 To run the backwards LSTM model, use the command
 
-python3 LSTM.py --data_path='.' --model=test backwards=True
+    python3 LSTM.py --data_path='.' --model=test backwards=True
 
 The "model" flag may be any of small, medium, large, or test. We recommend running test (a very small configuration) for time purposes.
 
